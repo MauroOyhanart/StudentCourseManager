@@ -3,6 +3,8 @@ A desktop JavaFX application to see a course and the relationships between its s
 
 Made with Java 17 and Java FX 8, using Maven Repositories.
 
+Utilizes an embedded database, SQLite.
+
 By performing
 
 mvn clean
@@ -13,7 +15,7 @@ on a local terminal in the code's folder, the application will produce a shaded 
 
 This allows for using packaging tools such as launch4j (https://launch4j.sourceforge.net) to generate an .exe file in Windows that is portable.
 
-All is needed to run such .exe is a JRE 17 and the javapath set.
+All is needed to run such .exe is a JRE 17 and the javapath set. The .exe will generate a sample.db file for storing the data.
 
 This is an example of a course created and visualized using this app.
 
