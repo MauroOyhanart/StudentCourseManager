@@ -20,3 +20,6 @@ All is needed to run such .exe is a JRE 17 and the javapath set. The .exe will g
 This is an example of a course created and visualized using this app.
 
 ![image](https://user-images.githubusercontent.com/71988296/222328491-ccfe2e0f-35c9-49d1-8c6b-f7309a76eaf7.png)
+
+
+In the git folder /output, there is a .jar, a .exe, and the ico.
