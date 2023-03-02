@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.geometry.Insets?>
+<AnchorPane fx:controller="org.domain.CourseController"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Pane layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="117.0">
+            <children>
+                <Label id="lbl_my_course" layoutX="14.0" layoutY="11.0" onMouseClicked="#goBackToMainMenu" prefHeight="21.0" prefWidth="41.0" text="Home" textAlignment="CENTER" />
+            </children>
+        </Pane>
+        <Pane layoutX="3.0" layoutY="57.0" prefHeight="56.0" prefWidth="1274.0" style="-fx-background-color: #154c79;">
+            <children>
+                <Label fx:id="course_name_label_title" alignment="CENTER" layoutX="224.0" layoutY="17.0" prefHeight="23.0" prefWidth="827.0" text="My Course" textFill="#eeeee4" />
+            </children>
+            <opaqueInsets>
+                <Insets bottom="70.0" left="70.0" right="70.0" />
+            </opaqueInsets>
+        </Pane>
+        <Button id="btn_add_course" fx:id="button_add_course" layoutX="1051.0" layoutY="701.0" mnemonicParsing="false" onAction="#toAddCourse" text="Add Course" />
+        <ScrollPane fx:id="scroll_pane_displayer" focusTraversable="false" layoutX="160.0" layoutY="153.0" prefHeight="528.0" prefViewportHeight="250.0" prefViewportWidth="489.0" prefWidth="960.0">
+            <content>
+                <VBox fx:id="vbox_displayer" prefHeight="522.0" prefWidth="953.0" />
+            </content></ScrollPane>
+        <ComboBox fx:id="cBox_courses" layoutX="447.0" layoutY="701.0" prefHeight="31.0" prefWidth="253.0" />
+        <Label id="lbl_notices" fx:id="label_notices" alignment="CENTER" contentDisplay="CENTER" layoutX="463.0" layoutY="113.0" prefHeight="50.0" prefWidth="378.0" text="There are no courses yet to display" />
+        <Button fx:id="edit_course_button" layoutX="716.0" layoutY="701.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="117.0" text="Edit Course" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,59 @@
+#lbl_my_course:hover{
+-fx-underline: true;
+-fx-cursor: hand;
+}
+
+#lbl_notices{
+-fx-text-fill: gray;
+}
+
+#lbl_warnings{
+-fx-text-fill: red;
+}
+
+#subjectfieldpaneid{
+-fx-margin: 6;
+-fx-padding: 6;
+-fx-cursor: hand;
+-fx-background-color: lightgray;
+-fx-content-alignment: center;
+-fx-alignment: center;
+-fx-border-color: black;
+-fx-border-width: 1px;
+-fx-border-radius: 2px;
+}
+
+#subjectfieldlabelid{
+-fx-content-alignment: center;
+-fx-alignment: center;
+}
+
+#subjectfieldpaneid: hover{
+-fx-underline: true;
+-fx-text-fill: red;
+-fx-background-color: springgreen ;
+}
+
+#needed_id{
+-fx-margin: 6;
+-fx-padding: 6;
+-fx-cursor: hand;
+-fx-background-color: lightblue;
+-fx-content-alignment: center;
+-fx-alignment: center;
+-fx-border-color: black;
+-fx-border-width: 1px;
+-fx-border-radius: 2px;
+}
+
+#allowed_id{
+-fx-margin: 6;
+-fx-padding: 6;
+-fx-cursor: hand;
+-fx-background-color: lightcoral   ;
+-fx-content-alignment: center;
+-fx-alignment: center;
+-fx-border-color: black;
+-fx-border-width: 1px;
+-fx-border-radius: 2px;
+}

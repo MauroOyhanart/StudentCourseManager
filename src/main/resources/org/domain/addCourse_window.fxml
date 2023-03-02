@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!-- fx:controller="org.domain.AddCourseController" -->
+<AnchorPane fx:controller="org.domain.AddCourseController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="272.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Pane layoutX="3.0" layoutY="14.0" prefHeight="38.0" prefWidth="266.0" style="-fx-background-color: #154c79;">
+            <children>
+                <Label alignment="CENTER" layoutX="85.0" layoutY="8.0" prefHeight="23.0" prefWidth="95.0" text="My Course" textFill="#eeeee4" />
+            </children>
+            <opaqueInsets>
+                <Insets bottom="70.0" left="70.0" right="70.0" />
+            </opaqueInsets>
+        </Pane>
+        <TextField fx:id="text_name" layoutX="14.0" layoutY="96.0" promptText="Course name here" />
+        <Label layoutX="14.0" layoutY="63.0" prefHeight="21.0" prefWidth="95.0" text="Course name" textAlignment="JUSTIFY" />
+        <Label layoutX="16.0" layoutY="140.0" prefHeight="21.0" prefWidth="122.0" text="Number of Terms" textAlignment="JUSTIFY" />
+        <ComboBox fx:id="cbox_terms" layoutX="14.0" layoutY="161.0" prefWidth="150.0" promptText="Select" visibleRowCount="13" />
+        <Button layoutX="98.0" layoutY="287.0" mnemonicParsing="false" onAction="#exitWindow" prefHeight="15.0" prefWidth="76.0" text="Cancel" />
+        <Button layoutX="91.0" layoutY="249.0" mnemonicParsing="false" onAction="#createCourse" text="Create course" />
+        <Label id="lbl_warnings" fx:id="label_warnings" alignment="CENTER" layoutX="27.0" layoutY="211.0" prefHeight="21.0" prefWidth="223.0" text="label warnings" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,14 @@
+# Maven build directories
+target
+build
+
+# JavaFX libraries
+lib
+
+# IDE-specific files
+.iml
+.ipr
+.iws
+.idea
+.vscode
+.class

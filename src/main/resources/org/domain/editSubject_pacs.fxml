@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:controller="org.domain.EditSubjectPACsController"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="160.0" layoutY="103.0" prefHeight="21.0" prefWidth="357.0" text="Hint: Select and move with the arrows. X for removal" />
+        <Pane layoutX="426.0" layoutY="130.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightgray;">
+            <children>
+                <Label layoutX="76.0" layoutY="14.0" prefHeight="21.0" prefWidth="49.0" text="Allows" />
+                <ListView fx:id="lv_allows" focusTraversable="false" layoutX="13.0" layoutY="49.0" prefHeight="144.0" prefWidth="176.0" />
+            </children>
+        </Pane>
+        <Pane layoutX="220.0" layoutY="130.0" prefHeight="310.0" prefWidth="200.0" style="-fx-background-color: lightgray;">
+            <children>
+                <Label layoutX="62.0" layoutY="14.0" text="All Subjects" />
+                <ListView fx:id="lv_all_subjects" focusTraversable="false" layoutX="12.0" layoutY="53.0" prefHeight="248.0" prefWidth="176.0" />
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="130.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightgray;">
+            <children>
+                <Label layoutX="79.0" layoutY="14.0" text="Needs" />
+                <ListView fx:id="lv_needs" focusTraversable="false" layoutX="12.0" layoutY="48.0" prefHeight="144.0" prefWidth="176.0" />
+            </children>
+        </Pane>
+        <Pane layoutX="4.0" layoutY="56.0" prefHeight="41.0" prefWidth="632.0" style="-fx-background-color: #154c79;">
+            <children>
+                <Label fx:id="label_name_edit" alignment="CENTER" layoutX="59.0" layoutY="9.0" prefHeight="23.0" prefWidth="514.0" text="Edit Subject Relationships" textFill="#eeeee4" />
+            </children>
+            <opaqueInsets>
+                <Insets bottom="70.0" left="70.0" right="70.0" />
+            </opaqueInsets>
+        </Pane>
+        <Button fx:id="btn_to_needs" layoutX="283.0" layoutY="440.0" mnemonicParsing="false" onAction="#addSelectedToNeeds" text="&lt;-" />
+        <Button fx:id="btn_to_allows" layoutX="320.0" layoutY="440.0" mnemonicParsing="false" onAction="#addSelectedToAllows" text="-&gt;" />
+        <Button fx:id="btn_rmv_need" layoutX="96.0" layoutY="330.0" mnemonicParsing="false" onAction="#removeSelectedNeed" text="X" />
+        <Button fx:id="btn_rmv_allow" layoutX="512.0" layoutY="330.0" mnemonicParsing="false" onAction="#removeSelectedAllow" text="X" />
+        <Button layoutX="257.0" layoutY="14.0" mnemonicParsing="false" onAction="#removeSubject" text="Remove Subject" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<!-- fx:controller="org.domain.PrimaryController" -->
+
+<AnchorPane fx:controller="org.domain.PrimaryController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="4.0" layoutY="51.0" prefHeight="56.0" prefWidth="632.0" style="-fx-background-color: #154c79;">
+         <children>
+            <Label alignment="CENTER" layoutX="268.0" layoutY="17.0" prefHeight="23.0" prefWidth="95.0" text="Home" textFill="#eeeee4" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="70.0" left="70.0" right="70.0" />
+         </opaqueInsets>
+      </Pane>
+      <Pane layoutX="197.0" layoutY="183.0" prefHeight="182.0" prefWidth="246.0">
+         <children>
+            <VBox prefHeight="182.0" prefWidth="246.0">
+               <children>
+                  <Pane prefHeight="45.0" prefWidth="246.0">
+                     <children>
+                        <Label id="lbl_my_course" fx:id="label_my_course" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="11.0" onMouseClicked="#switchToMyCourse" prefHeight="23.0" prefWidth="86.0" text="My Course" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="52.0" prefWidth="246.0">
+                     <children>
+                        <Label id="lbl_my_course" alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="15.0" prefHeight="23.0" prefWidth="95.0" text="My Grades" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="35.0" prefWidth="246.0">
+                     <children>
+                        <Label id="lbl_my_course" alignment="CENTER" contentDisplay="CENTER" layoutX="92.0" layoutY="6.0" onMouseClicked="#exitApplication" prefHeight="23.0" prefWidth="62.0" text="Exit" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
+
