@@ -19,7 +19,7 @@
             </opaqueInsets>
         </Pane>
         <TextField fx:id="text_name" layoutX="14.0" layoutY="96.0" promptText="Subject name here" />
-        <Label layoutX="14.0" layoutY="63.0" prefHeight="21.0" prefWidth="95.0" text="Subejct name" textAlignment="JUSTIFY" />
+        <Label layoutX="14.0" layoutY="63.0" prefHeight="21.0" prefWidth="95.0" text="Subject name" textAlignment="JUSTIFY" />
         <Label layoutX="16.0" layoutY="140.0" prefHeight="21.0" prefWidth="122.0" text="Subject Term" textAlignment="JUSTIFY" />
         <ComboBox fx:id="cbox_term" layoutX="14.0" layoutY="161.0" prefWidth="150.0" promptText="Select" visibleRowCount="13" />
         <Button layoutX="98.0" layoutY="287.0" mnemonicParsing="false" onAction="#exitWindow" prefHeight="15.0" prefWidth="76.0" text="Cancel" />
@@ -27,4 +27,3 @@
         <Label id="lbl_warnings" fx:id="label_warnings" alignment="CENTER" layoutX="27.0" layoutY="211.0" prefHeight="21.0" prefWidth="223.0" text="label warnings" />
     </children>
 </AnchorPane>
-

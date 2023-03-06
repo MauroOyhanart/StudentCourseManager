@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import persistence.PersistenceHandler;
 
@@ -24,6 +25,7 @@ public class App extends Application {
         initialize_UI_properties(stage);
         PersistenceHandler.initializeComponents();
         stage.show();
+        stage.setTitle("Student Course Manager!");
     }
 
     public static Parent loadFXML(String fxml) throws IOException {

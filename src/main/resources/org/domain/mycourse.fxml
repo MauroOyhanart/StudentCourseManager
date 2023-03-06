@@ -12,11 +12,11 @@
 
 <?import javafx.geometry.Insets?>
 <AnchorPane fx:controller="org.domain.CourseController"
-            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+            id="main_pane_id" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Pane layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="117.0">
             <children>
-                <Label id="lbl_my_course" layoutX="14.0" layoutY="11.0" onMouseClicked="#goBackToMainMenu" prefHeight="21.0" prefWidth="41.0" text="Home" textAlignment="CENTER" />
+                <Label id="lbl_my_course" layoutX="14.0" layoutY="11.0" onMouseClicked="#goBackToMainMenu" prefHeight="21.0" prefWidth="66.0" text="To Home" textAlignment="CENTER" />
             </children>
         </Pane>
         <Pane layoutX="3.0" layoutY="57.0" prefHeight="56.0" prefWidth="1274.0" style="-fx-background-color: #154c79;">

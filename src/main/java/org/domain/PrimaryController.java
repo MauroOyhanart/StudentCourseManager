@@ -7,6 +7,8 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -16,6 +18,10 @@ public class PrimaryController {
     Label label_my_course; //automatically populated due to @FXML annotation
 
     private Stage stage;
+
+    public PrimaryController(){
+
+    }
 
     @FXML
     private void switchToMyCourse() throws IOException {
@@ -34,10 +40,7 @@ public class PrimaryController {
             //Load scene to stage
             stage.setScene(scene);
             scene.getStylesheets().add(getClass().getResource("main_styles.css").toExternalForm());
-            //Put the stage in the middle of the scene <*
-            Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-            stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
-            stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2); // *>
+            this.initializeProperties();
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -48,7 +51,10 @@ public class PrimaryController {
         App.exitApplication();
     }
 
-    public Stage getStage(){
-        return stage;
+    private void initializeProperties(){
+        //Put the stage in the middle of the scene <*
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2); // *>
     }
 }

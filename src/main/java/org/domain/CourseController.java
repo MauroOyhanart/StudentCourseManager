@@ -75,7 +75,7 @@ public class CourseController{
         initializeController(stage);
         this.cBox_courses.setValue(course.getName()); //Lets see if this triggers the view generation
         showEditCourseUI(true);
-        course_name_label_title.setText(course_name_label_title.getText() + ": " + cBox_courses.getSelectionModel().getSelectedItem());
+        course_name_label_title.setText("My Course" + ": " + cBox_courses.getSelectionModel().getSelectedItem());
         loadCourse(course);
     }
 
@@ -88,7 +88,7 @@ public class CourseController{
             @Override
             public void handle(ActionEvent actionEvent) {
                 String selectedOption = cBox_courses.getValue();
-                course_name_label_title.setText(course_name_label_title.getText() + ": " + cBox_courses.getSelectionModel().getSelectedItem());
+                course_name_label_title.setText("My Course" + ": " + cBox_courses.getSelectionModel().getSelectedItem());
                 Course course = PersistenceHandler.getInstance().getCourse(selectedOption);
                 if (course != null) {
                     loadCourse(course);

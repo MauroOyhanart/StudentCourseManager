@@ -25,7 +25,7 @@
         <Button fx:id="new_subject_btn" layoutX="573.0" layoutY="705.0" mnemonicParsing="false" onAction="#openAddSubject" prefHeight="31.0" prefWidth="135.0" text="New Subject" />
         <Pane layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="159.0">
             <children>
-                <Label id="lbl_my_course" layoutX="14.0" layoutY="11.0" onMouseClicked="#goBackToMyCourse" prefHeight="21.0" prefWidth="81.0" text="My Course" textAlignment="CENTER" />
+                <Label id="lbl_my_course" layoutX="14.0" layoutY="11.0" onMouseClicked="#goBackToMyCourse" prefHeight="21.0" prefWidth="97.0" text="To My Course" textAlignment="CENTER" />
             </children>
         </Pane>
     </children>
