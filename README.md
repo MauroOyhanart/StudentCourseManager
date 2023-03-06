@@ -1,5 +1,5 @@
 # StudentCourseManager
-A desktop JavaFX application to see a course and the relationships between its subjects.
+A desktop JavaFX application to manually load, and visualize a course and the relationships between its subjects.
 
 Made with Java 17 and Java FX 8, using Maven Repositories.
 
@@ -19,7 +19,8 @@ All is needed to run such .exe is a JRE 17 and the javapath set. The .exe will g
 
 This is an example of a course created and visualized using this app.
 
-![image](https://user-images.githubusercontent.com/71988296/222328491-ccfe2e0f-35c9-49d1-8c6b-f7309a76eaf7.png)
+![image](https://user-images.githubusercontent.com/71988296/223075990-16bfa7ab-f184-4c4c-ad69-0a9d0751fe79.png)
+
 
 
 In the git folder /output, there is a .jar, a .exe, and the ico.
