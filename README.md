@@ -19,7 +19,7 @@ All is needed to run such .exe is a JRE 17 and the javapath set. The .exe will g
 
 This is an example of a course created and visualized using this app.
 
-![image](https://user-images.githubusercontent.com/71988296/223075814-c760b355-6c30-4757-b1d5-c82ea26d9930.png)
+![image](https://user-images.githubusercontent.com/71988296/223075990-16bfa7ab-f184-4c4c-ad69-0a9d0751fe79.png)
 
 
 
