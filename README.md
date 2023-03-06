@@ -1,5 +1,5 @@
 # StudentCourseManager
-A desktop JavaFX application to see a course and the relationships between its subjects.
+A desktop JavaFX application to manually load, and visualize a course and the relationships between its subjects.
 
 Made with Java 17 and Java FX 8, using Maven Repositories.
 
