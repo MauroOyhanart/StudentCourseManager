@@ -11,14 +11,12 @@ public class Course {
         this.courseId = c_id;
         this.courseName = c_name;
         this.nTerms = n_terms;
-        System.out.println("created course <id " + c_id + ", " + c_name + ", " + n_terms + " terms>");
     }
 
     public Course(String c_name, int n_terms) {
         this.courseId = -1;
         this.courseName = c_name;
         this.nTerms = n_terms;
-        System.out.println("created course <id " + this.courseId + ", " + c_name + ", " + n_terms + " terms>");
     }
 
     //Methods

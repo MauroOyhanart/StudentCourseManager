@@ -49,6 +49,8 @@ public class CourseController{
 
     private List<SubjectFieldViewable> subjectFieldViewables = new ArrayList<>();
 
+    private ObservableList<SubjectHBox> hBoxDisplayers;
+
     //Initializations
     public void initializeController(Stage stage){
         this.stage = stage;
@@ -118,11 +120,6 @@ public class CourseController{
     }
 
     private void loadCourse(Course course){
-        //Get subjects
-        List<Subject> subjects = PersistenceHandler.getInstance().getSubjects(course.getCourseId());
-        for(Subject s: subjects) {
-            s.printSubject();
-        }
         //Enable UI for editing a course
         showEditCourseUI(true);
         //Load subScene in this scene, or pane in this scene, containing full course visualization. This is a core feature
@@ -144,6 +141,7 @@ public class CourseController{
             SubjectHBox subjectHBox = new SubjectHBox();
             subjectHBoxes.add(subjectHBox);
         }
+        hBoxDisplayers = FXCollections.observableList(subjectHBoxes);
         //populate the hboxs with the subjects
         for (Subject s: subjects){
             int term = s.getSubjTerm();
@@ -153,6 +151,22 @@ public class CourseController{
         }
 
         vbox_displayer.getChildren().addAll(subjectHBoxes);
+        generateTermBarsView();
+    }
+
+    private void generateTermBarsView(){
+        int i = 2;
+        for (SubjectHBox subjectHBox : hBoxDisplayers){
+            if (i % 2 == 0){
+                subjectHBox.setId("paint_one");
+            }else{
+                subjectHBox.setId("paint_other");
+            }
+            Label label = new Label("Term " + (i-1));
+            label.setId("label_term");
+            subjectHBox.getChildren().add(0,label);
+            i++;
+        }
     }
 
     //Routing
@@ -230,7 +244,6 @@ public class CourseController{
     }
 
     private void showPresentCourseUI(boolean value){
-        System.out.println("cbox_courses.setVisible: " + value);
         cBox_courses.setVisible(value);
     }
     private void showEditCourseUI(boolean value){

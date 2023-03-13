@@ -41,7 +41,7 @@ public class SubjectFieldViewable extends SubjectField{
     }
 
     private void asleepEverySubject(){
-        for (SubjectFieldViewable subjectFieldViewable : courseController.getSubjectFieldViewables()){
+        for (SubjectFieldViewable subjectFieldViewable : this.getListViewables()){
             subjectFieldViewable.asleep();
         }
     }
@@ -61,12 +61,16 @@ public class SubjectFieldViewable extends SubjectField{
     }
 
     private SubjectFieldViewable findSubjectFieldViewableInCourseController(Subject subject){
-        for (SubjectFieldViewable subjectFieldViewable : courseController.getSubjectFieldViewables()){
+        for (SubjectFieldViewable subjectFieldViewable : this.getListViewables()){
             if (subjectFieldViewable.getSubjectName().equals(subject.getSubjName())){
                 return subjectFieldViewable;
             }
         }
         return null;
+    }
+
+    protected List<SubjectFieldViewable> getListViewables(){
+        return this.courseController.getSubjectFieldViewables();
     }
 
 }

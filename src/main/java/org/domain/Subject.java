@@ -58,7 +58,6 @@ public class Subject {
     }
 
     public void printSubject(){
-        System.out.println("subject <course "+courseId+", subjId" +subjId+ ", "+
-                subjName + ", term "+subjTerm+", order "+ orderNumber+ ">");
+        System.out.println("subject <course "+courseId+", subjId" +subjId+ ", "+ subjName + ", term "+subjTerm+", order "+ orderNumber+ ">");
     }
 }

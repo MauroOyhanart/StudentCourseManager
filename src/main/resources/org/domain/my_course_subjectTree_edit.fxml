@@ -7,9 +7,16 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Line?>
 <AnchorPane fx:controller="org.domain.SubjectTreeEditController"
             maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
+        <Pane layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="159.0">
+            <children>
+                <Label id="lbl_my_course" layoutX="14.0" layoutY="11.0" onMouseClicked="#goBackToMyCourse" prefHeight="21.0" prefWidth="97.0" text="To My Course" textAlignment="CENTER" />
+                <Line endX="17.400009155273438" endY="-68.0" layoutX="79.0" layoutY="99.0" startX="-75.00001525878906" startY="-68.0" />
+            </children>
+        </Pane>
         <Pane layoutX="3.0" layoutY="57.0" prefHeight="56.0" prefWidth="1274.0" style="-fx-background-color: #154c79;">
             <children>
                 <Label fx:id="course_name_label_title" alignment="CENTER" layoutX="226.0" layoutY="17.0" prefHeight="22.0" prefWidth="822.0" text="My Course - Editing" textFill="#eeeee4" />
@@ -18,15 +25,34 @@
                 <Insets bottom="70.0" left="70.0" right="70.0" />
             </opaqueInsets>
         </Pane>
-        <ScrollPane fx:id="scroll_pane_displayer" focusTraversable="false" layoutX="164.0" layoutY="142.0" prefHeight="552.0" prefViewportHeight="250.0" prefViewportWidth="489.0" prefWidth="953.0">
+        <ScrollPane id="main_scpane_id" fx:id="scroll_pane_displayer" focusTraversable="false" layoutX="262.0" layoutY="142.0" prefHeight="552.0" prefViewportHeight="250.0" prefViewportWidth="489.0" prefWidth="953.0" style="-fx-border-color: black;">
             <content>
-                <VBox fx:id="vbox_displayer" prefHeight="549.0" prefWidth="946.0" />
+                <VBox fx:id="vbox_displayer" prefHeight="542.0" prefWidth="941.0" />
             </content></ScrollPane>
-        <Button fx:id="new_subject_btn" layoutX="573.0" layoutY="705.0" mnemonicParsing="false" onAction="#openAddSubject" prefHeight="31.0" prefWidth="135.0" text="New Subject" />
-        <Pane layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="159.0">
+        <Button fx:id="new_subject_btn" layoutX="667.0" layoutY="709.0" mnemonicParsing="false" onAction="#openAddSubject" prefHeight="31.0" prefWidth="135.0" text="New Subject" />
+        <AnchorPane fx:id="apane_subject" layoutX="34.0" layoutY="142.0" prefHeight="552.0" prefWidth="193.0" style="-fx-border-color: black;">
             <children>
-                <Label id="lbl_my_course" layoutX="14.0" layoutY="11.0" onMouseClicked="#goBackToMyCourse" prefHeight="21.0" prefWidth="97.0" text="To My Course" textAlignment="CENTER" />
+                <Label fx:id="label_name_subject" alignment="CENTER" layoutX="39.0" layoutY="14.0" prefHeight="18.0" prefWidth="115.0" text="Subject Name" />
+                <Line endX="76.19999694824219" endY="-68.0" layoutX="97.0" layoutY="102.0" startX="-75.00001525878906" startY="-68.0" />
+                <Label layoutX="19.0" layoutY="43.0" text="Name" />
+                <Button layoutX="100.0" layoutY="105.0" mnemonicParsing="false" onAction="#removeSubject" prefHeight="26.0" prefWidth="79.0" text="Remove" />
+                <Button layoutX="14.0" layoutY="105.0" mnemonicParsing="false" onAction="#renameSubject" prefHeight="26.0" prefWidth="79.0" text="Rename" />
+                <Button layoutX="13.0" layoutY="210.0" mnemonicParsing="false" onAction="#moveSubjectLeft" prefHeight="26.0" prefWidth="45.0" text="Left" />
+                <Button layoutX="128.0" layoutY="210.0" mnemonicParsing="false" onAction="#moveSubjectRight" text="Right" />
+                <Button layoutX="70.0" layoutY="197.0" mnemonicParsing="false" onAction="#moveSubjectUp" prefHeight="26.0" prefWidth="45.0" text="Up" />
+                <Button layoutX="69.0" layoutY="231.0" mnemonicParsing="false" onAction="#moveSubjectDown" text="Down" />
+                <Label alignment="CENTER" layoutX="35.0" layoutY="166.0" prefHeight="18.0" prefWidth="115.0" text="Move Subject" />
+                <Line endX="76.19999694824219" endY="-68.0" layoutX="99.0" layoutY="252.0" startX="-79.39999389648438" startY="-68.0" />
+                <TextField fx:id="textfield_name_subject" layoutX="14.0" layoutY="68.0" />
+                <Line endX="76.19999694824219" endY="-68.0" layoutX="99.0" layoutY="392.0" startX="-75.00001525878906" startY="-68.0" />
+                <Button layoutX="18.0" layoutY="336.0" mnemonicParsing="false" onAction="#editPACs" prefHeight="26.0" prefWidth="159.0" text="Edit subject relationships" />
+                <Label alignment="CENTER" layoutX="40.0" layoutY="306.0" prefHeight="18.0" prefWidth="115.0" text="Relationships" />
+                <Label fx:id="label_warnings" alignment="CENTER" layoutX="27.0" layoutY="136.0" prefHeight="18.0" prefWidth="135.0" text="Label" textFill="#e13737" />
+                <Label fx:id="term_label" layoutX="17.0" layoutY="267.0" prefHeight="18.0" prefWidth="59.0" text="Term: " />
             </children>
-        </Pane>
+        </AnchorPane>
+        <Label layoutX="625.0" layoutY="120.0" prefHeight="18.0" prefWidth="214.0" text="Hint: create subject, then click it to edit" textFill="#a9a5a5" />
     </children>
 </AnchorPane>
+
+

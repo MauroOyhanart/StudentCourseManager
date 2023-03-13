@@ -23,15 +23,15 @@
 -fx-border-radius: 2px;
 }
 
-#subjectfieldlabelid{
--fx-content-alignment: center;
--fx-alignment: center;
-}
-
 #subjectfieldpaneid: hover{
 -fx-underline: true;
 -fx-text-fill: red;
 -fx-background-color: springgreen ;
+}
+
+#subjectfieldlabelid{
+-fx-content-alignment: center;
+-fx-alignment: center;
 }
 
 #needed_id{
@@ -60,4 +60,24 @@
 
 #main_pane_id{
 -fx-background-color: rgb(232, 239, 250);
+}
+
+.selected_id{ /* check */
+
+}
+
+#paint_one{
+-fx-background-color: rgb(166, 151, 189);
+}
+
+#paint_other{
+
+}
+
+#label_term{
+-fx-text-fill: rgb(113, 111, 115);
+}
+
+#button_add_subject{
+
 }

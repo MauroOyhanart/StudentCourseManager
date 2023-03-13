@@ -11,12 +11,14 @@
 
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Line?>
 <AnchorPane fx:controller="org.domain.CourseController"
             id="main_pane_id" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Pane layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="117.0">
             <children>
                 <Label id="lbl_my_course" layoutX="14.0" layoutY="11.0" onMouseClicked="#goBackToMainMenu" prefHeight="21.0" prefWidth="66.0" text="To Home" textAlignment="CENTER" />
+                <Line endX="3.9999847412109375" endY="-68.0" layoutX="76.0" layoutY="100.0" startX="-75.00001525878906" startY="-68.0" />
             </children>
         </Pane>
         <Pane layoutX="3.0" layoutY="57.0" prefHeight="56.0" prefWidth="1274.0" style="-fx-background-color: #154c79;">

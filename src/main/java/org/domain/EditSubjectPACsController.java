@@ -46,8 +46,13 @@ public class EditSubjectPACsController {
         this.subjectTreeEditController = subjectTreeEditController;
         this.subject = subject;
         this.stage = (Stage) this.label_name_edit.getScene().getWindow();
+        this.stage.setTitle("Edit Subject Relationships");
         label_name_edit.setText(label_name_edit.getText() + ": " + this.subject.getSubjName());
         this.populateLists();
+        this.stage.setOnCloseRequest(event -> {
+            this.subjectTreeEditController.closePAC();
+        });
+
     }
 
     private void populateLists(){
@@ -98,7 +103,6 @@ public class EditSubjectPACsController {
 
         this.needsObs.add(str);
         PersistenceHandler.getInstance().notifySubjectNeed(this.subject, str);
-        System.out.println("subject " + str + " added to needs");
     }
 
     public void addSelectedToAllows(){
@@ -111,15 +115,12 @@ public class EditSubjectPACsController {
 
         this.allowsObs.add(str);
         PersistenceHandler.getInstance().notifySubjectAllow(this.subject, str);
-        System.out.println("subject " + str + " added to allows");
-
     }
 
     public void removeSelectedNeed(){
         String str = lv_needs.getSelectionModel().getSelectedItem();
         if (str == null) return;
 
-        System.out.println("subject " + str + " removed from needs");
         lv_needs.getItems().remove(str);
         PersistenceHandler.getInstance().notifyNotNeeds(this.subject, str);
     }
@@ -128,16 +129,7 @@ public class EditSubjectPACsController {
         String str = lv_allows.getSelectionModel().getSelectedItem();
         if (str == null) return;
 
-        System.out.println("subject " + str + " removed from allow");
         lv_allows.getItems().remove(str);
         PersistenceHandler.getInstance().notifyNotAllows(this.subject, str);
-    }
-
-    //Method for subject removal
-    public void removeSubject(){
-        PersistenceHandler.getInstance().removeSubject(this.subject);
-        this.stage.close();
-        this.subjectTreeEditController.getStage().getScene().getRoot().setDisable(false);
-        subjectTreeEditController.updateSubjects();
     }
 }

@@ -1,55 +1,57 @@
 package org.domain;
 
 
-import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class SubjectFieldEditable extends SubjectField {
-
+/** A subject field viewable that can open up a menu for editing course relationships. Can also reorder a subject in the tree **/
+public class SubjectFieldEditable extends SubjectFieldViewable {
+    //Fields
     private final SubjectTreeEditController subjectTreeEditController;
+    List<Object> buttonObjects = new ArrayList<>();
 
-    public SubjectFieldEditable(Subject subject, SubjectTreeEditController subjectTreeEditController) {
-        super(subject);
-        this.setOnMouseClicked(event -> {
-            FXMLLoader loader = loadNewWindow("editSubject_pacs.fxml");
-            EditSubjectPACsController editSubjectPACsController = loader.getController();
-            editSubjectPACsController.initializeController(subject, subjectTreeEditController);
+    private boolean clicked = false;
 
-        });
+    //Constructor
+    public SubjectFieldEditable(Subject subject, SubjectTreeEditController subjectTreeEditController, CourseController courseController) {
+        super(subject, courseController);
         this.subjectTreeEditController = subjectTreeEditController;
+        this.setOnMouseClicked(event -> {
+            if (!clicked ){
+                this.subjectTreeEditController.SubjectFieldEditableDeselect();
+                this.showSelected();
+                this.subjectTreeEditController.SubjectFieldEditableSelect(this);
+            }
+            else {
+                this.subjectTreeEditController.SubjectFieldEditableDeselect();
+                this.deselect();
+            }
+        });
     }
 
-    //Returns the fxml loader, so we could get the controller if we wanted to
-    private FXMLLoader loadNewWindow(String theFxml){
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(theFxml));
-        try{
-            Parent root = loader.load();
-            //Set scene
-            Scene scene = new Scene(root);
-            //Load scene to stage
-            stage.setScene(scene);
-            scene.getStylesheets().add(getClass().getResource("main_styles.css").toExternalForm());
-            stage.show();
-            subjectTreeEditController.getStage().getScene().getRoot().setDisable(true);
-            stage.setOnCloseRequest(event ->{
-                subjectTreeEditController.getStage().getScene().getRoot().setDisable(false);
-            });
-
-        }catch (IOException e){
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
-        return loader;
+    //Methods
+    private void showSelected(){
+        this.getStyleClass().add("selected_id"); /* check */
+        clicked = true;
     }
+
+    public void deselect(){
+        this.getStyleClass().remove("selected_id"); /* check */
+        clicked = false;
+    }
+
+    //Overrided methods for displaying.
+    @Override
+    protected List<SubjectFieldViewable> getListViewables(){
+        return this.subjectTreeEditController.getSubjectFieldViewables();
+    }
+
+
+
 }

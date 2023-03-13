@@ -129,7 +129,6 @@ public class PersistenceHandler implements IPersistenceHandler {
             statement.setQueryTimeout(30);
             //query
             String query = "insert into course(course_name, n_terms) values ('"+course.getName()+"', "+course.getnTerms()+");";
-            System.out.println(query);
             statement.executeUpdate(query);
         } catch(SQLException e) {
             System.err.println(e.getMessage());
@@ -157,7 +156,6 @@ public class PersistenceHandler implements IPersistenceHandler {
                     " values ("+subject.getCourseId()+
                     ", (select coalesce(max(subj_id), 0) + 1 from subject where course_id= "+subject.getCourseId()+"), "+
                     "'"+subject.getSubjName()+"', "+subject.getSubjTerm()+", 0);";
-            System.out.println(query);
             statement.executeUpdate(query);
         } catch(SQLException e) {
             System.err.println(e.getMessage());
@@ -181,7 +179,6 @@ public class PersistenceHandler implements IPersistenceHandler {
             statement.setQueryTimeout(30);
             //query
             String query = "select * from course where course_name= '"+courseName+"' limit 1;";
-            System.out.println("query: " + query);
             ResultSet rs = statement.executeQuery(query);
             int courseId = -1, nTerms = -1;
             while (rs.next()){
@@ -411,6 +408,72 @@ public class PersistenceHandler implements IPersistenceHandler {
             statement.executeUpdate(
                     "delete from parent where ((course_par_id="+subject.getCourseId()+" and subj_par_id="+subject.getSubjId()+")" +
                             "or (course_child_id="+subject.getCourseId()+" and subj_child_id="+subject.getSubjId()+"));"
+            );
+        } catch(SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if(connection != null)
+                    connection.close();
+            } catch(SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void renameSubject(Subject subject, String newName){
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            //query
+            statement.executeUpdate(
+                    "update subject set subj_name='"+newName+"' " +
+                            "where course_id="+subject.getCourseId()+" and subj_id="+subject.getSubjId()+";"
+            );
+        } catch(SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if(connection != null)
+                    connection.close();
+            } catch(SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void changeSubjectTerm(Subject subject, int newTerm){
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            //query
+            statement.executeUpdate(
+                    "update subject set subj_term="+newTerm+" " +
+                            "where course_id="+subject.getCourseId()+" and subj_id="+subject.getSubjId()+";"
+            );
+        } catch(SQLException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            try {
+                if(connection != null)
+                    connection.close();
+            } catch(SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void changeSubjectOrderNumber(Subject subject, int newOrderNumber){
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            //query
+            statement.executeUpdate(
+                    "update subject set orderNumber="+newOrderNumber+" " +
+                            "where course_id="+subject.getCourseId()+" and subj_id="+subject.getSubjId()+";"
             );
         } catch(SQLException e) {
             System.err.println(e.getMessage());
