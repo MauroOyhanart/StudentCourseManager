@@ -1,5 +1,5 @@
 # StudentCourseManager
-A desktop JavaFX application to manually load, and visualize a course and the relationships between its subjects.
+A desktop JavaFX application to manually load and visualize a course and the relationships between its subjects.
 
 Made with Java 17 and Java FX 8, using Maven Repositories.
 
@@ -7,9 +7,10 @@ Utilizes an embedded database, SQLite.
 
 By performing
 
+```sh
 mvn clean
-
 mvn install
+```
 
 on a local terminal in the code's folder, the application will produce a shaded jar that has all the libraries bundled in it.
 
